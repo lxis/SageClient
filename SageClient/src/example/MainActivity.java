@@ -1,4 +1,4 @@
-package com.sage.client.example;
+package example;
 
 import java.util.ArrayList;
 
