@@ -4,9 +4,9 @@ import java.util.ArrayList;
 
 import org.apache.http.message.BasicNameValuePair;
 
-import com.sage.client.AsyncHelper;
 import com.sage.client.RestClient;
 import com.sage.client.RestRequest;
+import com.sage.core.AsyncHelper;
 import com.sageclient.example.R;
 
 import android.os.Bundle;
