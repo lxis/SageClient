@@ -31,11 +31,11 @@ public class MainActivity extends Activity {
 			protected UserDTO await() {
 				RestRequest request = new RestRequest();
 				request.Url = "http://182.92.4.28/articlehandler.ashx";
-				request.GetParamDic.add(new BasicNameValuePair("in", Integer
+				request.GetParams.add(new BasicNameValuePair("in", Integer
 						.toString(lastIndex)));
-				request.PostParamDic.add(new BasicNameValuePair("rn", Integer
+				request.PostParams.add(new BasicNameValuePair("rn", Integer
 						.toString(singleCount)));
-				return RestClient.GetDtoFromServer(request, UserDTO.class);
+				return RestClient.message(request, UserDTO.class);
 			}
 
 			@Override

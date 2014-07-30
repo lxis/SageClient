@@ -6,6 +6,6 @@ import org.apache.http.message.BasicNameValuePair;
 
 public class RestRequest {		
 	public String Url;
-	public ArrayList<BasicNameValuePair> GetParamDic= new ArrayList<BasicNameValuePair>();
-	public ArrayList<BasicNameValuePair> PostParamDic= new ArrayList<BasicNameValuePair>();
+	public ArrayList<BasicNameValuePair> GetParams= new ArrayList<BasicNameValuePair>();
+	public ArrayList<BasicNameValuePair> PostParams= new ArrayList<BasicNameValuePair>();
 }
