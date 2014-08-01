@@ -20,7 +20,7 @@ import android.graphics.BitmapFactory;
 
 public class RestCommonClient
 {
-	public String GetStringFromNetwork(String url)
+	public String getStringFromNetwork(String url)
 	{
 		HttpClient hc = new DefaultHttpClient();
 		url = url.replaceAll(" ", "%20");
@@ -52,7 +52,7 @@ public class RestCommonClient
 		return null;
 	}
 
-	public InputStream GetStreamFromNetwork(String url)
+	public InputStream getStreamFromNetwork(String url)
 	{
 		URL myFileUrl = null;
 		InputStream is = null;

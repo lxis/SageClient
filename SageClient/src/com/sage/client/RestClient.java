@@ -12,7 +12,7 @@ public class RestClient
 	{
 		RestCommonClient restCommonClient = new RestCommonClient();
 		String url = generateUrlByRequest(request);
-		String result = restCommonClient.GetStringFromNetwork(url);
+		String result = restCommonClient.getStringFromNetwork(url);
 		if (classType == String.class) return (T) result;
 		T jsonObject = new Gson().fromJson(result, classType);
 		return jsonObject;
@@ -31,7 +31,7 @@ public class RestClient
 	{
 		RestCommonClient restCommonClient = new RestCommonClient();
 		String url = generateUrlByRequest(request);
-		InputStream result = restCommonClient.GetStreamFromNetwork(url);
+		InputStream result = restCommonClient.getStreamFromNetwork(url);
 		return result;
 	}
 }
