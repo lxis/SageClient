@@ -18,61 +18,48 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 
-public class RestCommonClient
-{
-	public String getStringFromNetwork(String url)
-	{
+public class RestCommonClient {
+	public String getStringFromNetwork(String url) {
 		HttpClient hc = new DefaultHttpClient();
 		url = url.replaceAll(" ", "%20");
 		HttpGet hg = new HttpGet(url);
-		try
-		{
+		try {
 			HttpResponse hr = hc.execute(hg);
 			HttpEntity he = hr.getEntity();
 			InputStream is = he.getContent();
 
-			BufferedReader br = new BufferedReader(new InputStreamReader(is, "UTF-8"));
+			BufferedReader br = new BufferedReader(new InputStreamReader(is,
+					"UTF-8"));
 			StringBuffer buf = new StringBuffer();
 			String line;
-			while (null != (line = br.readLine()))
-			{
+			while (null != (line = br.readLine())) {
 				buf.append(line).append("\n");
 			}
 			String responseString = buf.toString();
 			return responseString;
-		}
-		catch (ClientProtocolException e)
-		{
+		} catch (ClientProtocolException e) {
 			e.printStackTrace();
-		}
-		catch (IOException e)
-		{
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		return null;
 	}
 
-	public InputStream getStreamFromNetwork(String url)
-	{
+	public InputStream getStreamFromNetwork(String url) {
 		URL myFileUrl = null;
 		InputStream is = null;
-		try
-		{
+		try {
 			myFileUrl = new URL(url);
-		}
-		catch (MalformedURLException e)
-		{
+		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		}
-		try
-		{
-			HttpURLConnection conn = (HttpURLConnection) myFileUrl.openConnection();
+		try {
+			HttpURLConnection conn = (HttpURLConnection) myFileUrl
+					.openConnection();
 			conn.setDoInput(true);
 			conn.connect();
 			is = conn.getInputStream();
-		}
-		catch (IOException e)
-		{
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		return is;
